@@ -13,6 +13,7 @@ morgan.token('body', (req) => {
 
 app.use(express.json())
 app.use(cors())
+app.use(express.static('dist'))
 
 
 
