@@ -141,9 +141,7 @@ app.post('/api/persons',(request,response,next) => {
     phone.save().then(result => {
         response.json(result)
     })
-    .catch(error => {
-        next(error)
-    })
+    .catch(error => next(error))
     
 })
 

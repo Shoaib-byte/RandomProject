@@ -93,7 +93,6 @@ const App = () => {
       .getAll()
       .then(person => {
         setPersons(person)
-        console.log(person)
       })
   }, [])
 
@@ -143,6 +142,9 @@ const App = () => {
           }, 5000)
           setNewName('')
           setPhone('')
+        })
+        .catch(error => {
+          setErrorMessage(error.response.data.error)
         })
     }
   }
