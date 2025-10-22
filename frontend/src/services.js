@@ -1,14 +1,14 @@
 import axios from 'axios'
-const baseUrl = ''
+const baseUrl = '/api/persons'
 const api_key = import.meta.env.VITE_SOME_KEY
 
 const getAll = () => {
-  const request = axios.get(`/persons`)
+  const request = axios.get(`/api/persons`)
   return request.then(response => response.data)
 }
 
 const getByName =(name) => {
-    const request = axios.get(`/api/persons/${name}`)
+    const request = axios.get(`${baseUrl}/${name}`)
     return request.then(response => response.data)
 }
 
@@ -18,7 +18,7 @@ const getWeatherData = (lat,lon) => {
 }
 
 const create = newObject => {
-  const request = axios.post(`${baseUrl}/api/persons`, newObject)
+  const request = axios.post(`${baseUrl}`, newObject)
   return request.then(response => response.data)
 }
 

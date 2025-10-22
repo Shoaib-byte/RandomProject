@@ -93,6 +93,7 @@ const App = () => {
       .getAll()
       .then(person => {
         setPersons(person)
+        console.log(person)
       })
   }, [])
 
@@ -110,7 +111,6 @@ const App = () => {
   const addPhone = (event) => {
     event.preventDefault()
     const newObject = {
-      id: Math.random(),
       name: newName,
       number: newPhone,
     }
